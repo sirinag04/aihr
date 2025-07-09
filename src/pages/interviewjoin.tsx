@@ -5,7 +5,10 @@ const InterviewJoin: React.FC = () => {
   const { roomId } = useParams();
   const navigate = useNavigate();
 
+  const userIdentity = 'candidate'; // or 'interviewer' if used on interviewer side
+
   const handleJoinClick = () => {
+    console.log("ROOM ID:", roomId, "IDENTITY:", userIdentity); // ✅ helpful debug log
     navigate(`/video-room/${roomId}`);
   };
 
