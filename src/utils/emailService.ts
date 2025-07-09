@@ -10,8 +10,9 @@ export interface EmailInvitation {
 
 export const generateMeetingLink = (): string => {
   const roomId = Math.random().toString(36).substring(2, 15);
-  return `http://192.168.0.117:5173/interview/join/${roomId}`;
+  return `https://aihr-fawn.vercel.app/interview/join/${roomId}`;  // ✅ Use your Vercel URL
 };
+
 
 export const generateEmailTemplate = (invitation: EmailInvitation): string => {
   const formattedDate = invitation.interviewDate.toLocaleDateString('en-US', {
