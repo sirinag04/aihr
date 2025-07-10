@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const InterviewJoin: React.FC = () => {
   const { roomId } = useParams();
   const navigate = useNavigate();
 
-  const userIdentity = 'candidate'; // or 'interviewer' if used on interviewer side
+  const userIdentity = 'candidate'; // change this if needed for interviewer
+
+  // ✅ Log on load to check room ID and identity immediately
+  useEffect(() => {
+    console.log("🚀 [InterviewJoin] ROOM ID:", roomId, "IDENTITY:", userIdentity);
+  }, [roomId]);
 
   const handleJoinClick = () => {
-    console.log("ROOM ID:", roomId, "IDENTITY:", userIdentity); // ✅ helpful debug log
+    console.log("🟢 Join button clicked with ROOM ID:", roomId, "IDENTITY:", userIdentity);
     navigate(`/video-room/${roomId}`);
   };
 

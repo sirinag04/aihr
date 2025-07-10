@@ -9,9 +9,9 @@ export interface EmailInvitation {
 }
 
 export const generateMeetingLink = (): string => {
-  const roomId = Math.random().toString(36).substring(2, 15);
-  return `https://aihr-fawn.vercel.app/interview/join/${roomId}`;  // ✅ Use your Vercel URL
+  return 'https://teams.live.com/meet/9338273471088?p=tL6QgDBBdoDZaby6Qu'; // your real Teams link here
 };
+
 
 
 export const generateEmailTemplate = (invitation: EmailInvitation): string => {
